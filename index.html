@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Segoe UI', sans-serif;
+            height: 100%;
+        }
+
+        header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffde59;
+        }
+
+        .hero {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: white;
+            color: #007bff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffde59;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">MyBrand</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h2>Welcome to My Modern Website</h2>
+            <p>Clean. Simple. Responsive.</p>
+            <button onclick="changeTheme()">Change Theme</button>
+        </div>
+    </header>
+
+    <script>
+        function changeTheme() {
+            const colors = [
+                ["#4facfe", "#00f2fe"],
+                ["#f093fb", "#f5576c"],
+                ["#43e97b", "#38f9d7"],
+                ["#667eea", "#764ba2"]
+            ];
+            const i = Math.floor(Math.random() * colors.length);
+            document.querySelector("header").style.background = `linear-gradient(to right, ${colors[i][0]}, ${colors[i][1]})`;
+        }
+    </script>
+</body>
+</html>
