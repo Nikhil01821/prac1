@@ -1,118 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Modern Webpage</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Feature-Rich Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body, html {
-            font-family: 'Segoe UI', sans-serif;
-            height: 100%;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
 
-        header {
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: auto;
+    }
 
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+    #hero {
+      background: #007BFF;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
 
-        nav ul li a:hover {
-            color: #ffde59;
-        }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: white;
+      color: #007BFF;
+      text-decoration: none;
+      border-radius: 5px;
+    }
 
-        .hero {
-            text-align: center;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
+    .card {
+      background: #f0f0f0;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+    }
 
-        button {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: white;
-            color: #007bff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    form input, form textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
 
-        button:hover {
-            background-color: #ffde59;
-            color: black;
-        }
-    </style>
+    form button {
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1 class="logo">MyBrand</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h2>Welcome to My Modern Website</h2>
-            <p>Clean. Simple. Responsive.</p>
-            <button onclick="changeTheme()">Change Theme</button>
-        </div>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">MySite</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <script>
-        function changeTheme() {
-            const colors = [
-                ["#4facfe", "#00f2fe"],
-                ["#f093fb", "#f5576c"],
-                ["#43e97b", "#38f9d7"],
-                ["#667eea", "#764ba2"]
-            ];
-            const i = Math.floor(Math.random() * colors.length);
-            document.querySelector("header").style.background = `linear-gradient(to right, ${colors[i][0]}, ${colors[i][1]})`;
-        }
-    </script>
+  <section id="hero">
+    <h1>Welcome to My Website</h1>
+    <p>Clean. Responsive. Functional.</p>
+    <a href="#services" class="btn">Explore Services</a>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We build modern, responsive websites and applications with great user experience.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Beautiful, user-friendly interfaces.</p>
+      </div>
+      <div class="card">
+        <h3>Development</h3>
+        <p>Robust and scalable solutions.</p>
+      </div>
+      <div class="card">
+        <h3>SEO</h3>
+        <p>Improve your online visibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <button id="topBtn">↑</button>
+
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const topBtn = document.getElementById('topBtn');
+    window.onscroll = () => {
+      topBtn.style.display = window.scrollY > 100 ? 'block' : 'none';
+    };
+    topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+      this.reset();
+    });
+  </script>
 </body>
 </html>
